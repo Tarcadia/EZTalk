@@ -1,4 +1,4 @@
-Attribute VB_Name = "Ôà»°´¦Àí"
+Attribute VB_Name = "è„è¯å¤„ç†"
 
 Public Function IsBadWord(Str As String) As Boolean
 
@@ -12,39 +12,39 @@ Public Function IsBadWord(Str As String) As Boolean
     Ans = _
     (strLC Like "*fuck*") _
  Or (strLC Like "*tmd*") _
- Or (strLC Like "*ÄáÂê*") _
- Or (strLC Like "*ÃH*") _
- Or (strLC Like "*ŒÂ*") _
- Or (strLC Like "*Ü³*") _
+ Or (strLC Like "*å°¼ç›*") _
+ Or (strLC Like "*è‚*") _
+ Or (strLC Like "*å±„*") _
+ Or (strLC Like "*è‰¹*") _
  Or (strLC Like "*2b*") _
  Or (strLC Like "*zb*")
 
     Ans = Ans Or _
     ((strLC Like "*sb*") And Not (strLC Like "*#sb")) _
- Or (strLC Like "*ÄãÂè*") _
+ Or (strLC Like "*ä½ å¦ˆ*") _
  Or (strLC Like "*tmd*") _
- Or (strLC Like "*ËûÂèµÄ*") _
- Or (strLC Like "*Éµ±Æ*") _
- Or (strLC Like "*É·±Ê*") _
- Or (strLC Like "*¶ş±Æ*") _
- Or (strLC Like "*ÄãËûÂè*")
+ Or (strLC Like "*ä»–å¦ˆçš„*") _
+ Or (strLC Like "*å‚»é€¼*") _
+ Or (strLC Like "*ç…ç¬”*") _
+ Or (strLC Like "*äºŒé€¼*") _
+ Or (strLC Like "*ä½ ä»–å¦ˆ*")
 
     Ans = Ans Or _
     (strLC Like "*bitch*") _
  Or (strLC Like "*asshole*") _
  Or (strLC Like "*dick*") _
  Or (strLC Like "*damn*") _
- Or (strLC Like "*ÄãÄï*") _
- Or (strLC Like "*ÎÒ¿¿*") _
+ Or (strLC Like "*ä½ å¨˜*") _
+ Or (strLC Like "*æˆ‘é *") _
  Or (strLC Like "*cao*") _
  Or (strLC Like "*kao*")
 
     Ans = Ans Or _
-    (strLC Like "*¿¿£¡*") _
- Or (strLC Like "*ÄïÏ£Æ¥*") _
- Or (strLC Like "*ÂèÁË¸ö*") _
- Or (strLC Like "*ÎÒ²Ù*") _
- Or (strLC Like "*ÅŞ*") _
+    (strLC Like "*é ï¼*") _
+ Or (strLC Like "*å¨˜å¸ŒåŒ¹*") _
+ Or (strLC Like "*å¦ˆäº†ä¸ª*") _
+ Or (strLC Like "*æˆ‘æ“*") _
+ Or (strLC Like "*å‘¸*") _
  Or (strLC Like "*dork*") _
  Or (strLC Like "*nerd*") _
  Or (strLC Like "*geek*")
@@ -61,7 +61,7 @@ Public Function IsBadWord(Str As String) As Boolean
  
      Ans = Ans Or _
     (strLC Like "*dammit*") _
- Or (strLC Like "*³ÂË®±â*") _
+ Or (strLC Like "*é™ˆæ°´æ‰*") _
  Or (strLC Like "") _
  Or (strLC Like "") _
  Or (strLC Like "") _
@@ -69,8 +69,8 @@ Public Function IsBadWord(Str As String) As Boolean
  Or (strLC Like "") _
  Or (strLC Like "")
 
-    If Dir("Ôà»°ÁĞ±í.bwl") <> "" Then
-        Open "Ôà»°ÁĞ±í.bwl" For Input As #File
+    If Dir("è„è¯åˆ—è¡¨.bwl") <> "" Then
+        Open "è„è¯åˆ—è¡¨.bwl" For Input As #File
         While Not EOF(File)
             Line Input #File, Dat
             Ans = Ans Or (strLC Like Dat)

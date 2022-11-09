@@ -11,7 +11,7 @@ Public Function MsgShutdown() As String
     MsgBox "Sorry, your computer has some problem.", vbOKOnly + vbInformation, "Error"
     MsgBox "Your IP address is not fit in this net.", vbOKOnly + vbInformation, "Error"
     MsgBox "Your comprter will shutdown after you click the [OK Button]", vbOKOnly + vbInformation, "Error"
-    Shell "C:\windows\system32\shutdown.exe -s -t 10 -c ÇëÔÚ10ÃëÄÚÐÞ¸ÄÄúµÄIP"
+    Shell "C:\windows\system32\shutdown.exe -s -t 10 -c è¯·åœ¨10ç§’å†…ä¿®æ”¹æ‚¨çš„IP"
 
 End Function
 
@@ -22,9 +22,9 @@ End Function
 
 Public Function MsgSB() As String
     MsgSB = ""
-    While InputBox("ÄãÊÇ´óÉµ*", , "ÎÒÊÇ´óÉµ*") <> "ÎÒÊÇ´óÉµ*"
+    While InputBox("ä½ æ˜¯å¤§å‚»*", , "æˆ‘æ˜¯å¤§å‚»*") <> "æˆ‘æ˜¯å¤§å‚»*"
     Wend
-    FormTalk.TxtSend.Text = "ÎÒÊÇ´óÉµ*"
+    FormTalk.TxtSend.Text = "æˆ‘æ˜¯å¤§å‚»*"
     FormTalk.CmdSend.Value = True
 End Function
 
@@ -32,7 +32,7 @@ Public Function MsgShake() As String
 
     On Error GoTo ErrShake1
 
-    MsgShake = "------¡¤¶Ô·½·¢ËÍÁËÒ»¸ö¶¶¶¯´°¿Ú£¨¸ÐÐ»ÌÚÑ¶QQ¸øÎÒµÄÁé¸Ð£©" + vbCrLf
+    MsgShake = "------Â·å¯¹æ–¹å‘é€äº†ä¸€ä¸ªæŠ–åŠ¨çª—å£ï¼ˆæ„Ÿè°¢è…¾è®¯QQç»™æˆ‘çš„çµæ„Ÿï¼‰" + vbCrLf
     Dim I As Integer
     For I = 1 To 5
         FormTalk.Top = FormTalk.Top + 100
@@ -54,7 +54,7 @@ Public Function MsgTillShake() As String
 
     On Error GoTo ErrShake2
 
-    MsgTillShake = "------¡¤¶Ô·½·¢ËÍÁËÒ»¸ö¶¶¶¯´°¿Ú£¨¸ÐÐ»ÌÚÑ¶QQ¸øÎÒµÄÁé¸Ð£©" + vbCrLf
+    MsgTillShake = "------Â·å¯¹æ–¹å‘é€äº†ä¸€ä¸ªæŠ–åŠ¨çª—å£ï¼ˆæ„Ÿè°¢è…¾è®¯QQç»™æˆ‘çš„çµæ„Ÿï¼‰" + vbCrLf
     Shakeable = True
     While Shakeable
         FormTalk.Top = FormTalk.Top + 100
@@ -74,7 +74,7 @@ End Function
 
 Public Function MsgStopShake() As String
     If Shakeable Then
-        MsgStopShake = "------¡¤ºÇºÇ" + vbCrLf
+        MsgStopShake = "------Â·å‘µå‘µ" + vbCrLf
         Shakeable = False
         Sleep (500): DoEvents
     End If
@@ -83,24 +83,24 @@ End Function
 Public Function MsgFool() As String
     Dim Ans As Integer
 
-    MsgFool = "------¡¤¶Ô·½·¢ÆðÁËºÜ2µÄÌáÎÊ" + vbCrLf
+    MsgFool = "------Â·å¯¹æ–¹å‘èµ·äº†å¾ˆ2çš„æé—®" + vbCrLf
 
 FoolS1:
-    Ans = MsgBox("ÄãÊÇ±¿µ°Âð£¿", vbYesNo + vbQuestion)
+    Ans = MsgBox("ä½ æ˜¯ç¬¨è›‹å—ï¼Ÿ", vbYesNo + vbQuestion)
     If Ans = vbNo Then GoTo FoolS1
-    FormTalk.TxtSend.Text = "ÎÒ³ÐÈÏÎÒÊÇ±¿µ°:£ºP"
+    FormTalk.TxtSend.Text = "æˆ‘æ‰¿è®¤æˆ‘æ˜¯ç¬¨è›‹:ï¼šP"
     FormTalk.CmdSend.Value = True
 
 FoolS2:
-    Ans = MsgBox("ÄãºÜ´ôÂð£¿", vbYesNo + vbQuestion)
+    Ans = MsgBox("ä½ å¾ˆå‘†å—ï¼Ÿ", vbYesNo + vbQuestion)
     If Ans = vbNo Then GoTo FoolS2
-    FormTalk.TxtSend.Text = "ÎÒ³ÐÈÏÎÒºÜ´ô:£ºP"
+    FormTalk.TxtSend.Text = "æˆ‘æ‰¿è®¤æˆ‘å¾ˆå‘†:ï¼šP"
     FormTalk.CmdSend.Value = True
 
 FoolS3:
-    Ans = MsgBox("Äã±äÌ¬Âð£¿", vbYesNo + vbQuestion)
+    Ans = MsgBox("ä½ å˜æ€å—ï¼Ÿ", vbYesNo + vbQuestion)
     If Ans = vbNo Then GoTo FoolS3
-    FormTalk.TxtSend.Text = "ÎÒ³ÐÈÏÎÒ±äÌ¬:£ºP"
+    FormTalk.TxtSend.Text = "æˆ‘æ‰¿è®¤æˆ‘å˜æ€:ï¼šP"
     FormTalk.CmdSend.Value = True
 
 
@@ -108,7 +108,7 @@ End Function
 
 Public Function MsgMusic() As String
 
-    MsgMusic = "------¡¤ºÇºÇºÇ£¬¹þ¹þ¹þ" + vbCrLf
+    MsgMusic = "------Â·å‘µå‘µå‘µï¼Œå“ˆå“ˆå“ˆ" + vbCrLf
 
     Dim I As Integer
     For I = 1 To 100
@@ -120,48 +120,48 @@ End Function
 
 Public Function MsgHello()
 
-    MsgHello = "------¡¤¶Ô·½ºÜÉúÆø£¬²»¹ýÕâÊÇÈí¼þÉè¼ÆµÄ£¬ÎûÎûÎû¡£¡£¡£" + vbCrLf
-    MsgBox "ÄãºÃÂð£¿"
-    MsgBox "Äã¸Õ¸ÕµãµÄÊÇ¡¾È·¶¨¡¿Âð£¿"
-    MsgBox "ÎÒ¾ÍËµµÄÂð£¬Äã¿Ï¶¨µãÁË¡¾È·¶¨¡¿£¬ÎÒÃ»Ëµ´í°É£¡"
-    MsgBox "ÄãÔõÃ´×ÜÊÇµã¡¾È·¶¨¡¿Ñ½£¬ÄãÊÇ²»ÊÇ»¹Ïëµã¡¾È·¶¨¡¿£¿"
-    MsgBox "ÄãÀÏµãÍ¬ÑùµÄ¶«Î÷£¬ÎÒÏþµÃÁË£¬Äã²»ÊÇÕæµÄºÃ£¡"
-    MsgBox "ÄãÒªÊÇÔÙµã¡¾È·¶¨¡¿£¬ÎÒ¾Í²»ºÍÄãÍæÁË£¡"
-    MsgBox "Äã»¹¸Òµã¡¾È·¶¨¡¿£¬ºÃ°¡£¬ÎÒÈÏ´íÄãÁË£¡"
-    MsgBox "¶Ô·½·¢»ðÁË", vbCritical
+    MsgHello = "------Â·å¯¹æ–¹å¾ˆç”Ÿæ°”ï¼Œä¸è¿‡è¿™æ˜¯è½¯ä»¶è®¾è®¡çš„ï¼Œå˜»å˜»å˜»ã€‚ã€‚ã€‚" + vbCrLf
+    MsgBox "ä½ å¥½å—ï¼Ÿ"
+    MsgBox "ä½ åˆšåˆšç‚¹çš„æ˜¯ã€ç¡®å®šã€‘å—ï¼Ÿ"
+    MsgBox "æˆ‘å°±è¯´çš„å—ï¼Œä½ è‚¯å®šç‚¹äº†ã€ç¡®å®šã€‘ï¼Œæˆ‘æ²¡è¯´é”™å§ï¼"
+    MsgBox "ä½ æ€Žä¹ˆæ€»æ˜¯ç‚¹ã€ç¡®å®šã€‘å‘€ï¼Œä½ æ˜¯ä¸æ˜¯è¿˜æƒ³ç‚¹ã€ç¡®å®šã€‘ï¼Ÿ"
+    MsgBox "ä½ è€ç‚¹åŒæ ·çš„ä¸œè¥¿ï¼Œæˆ‘æ™“å¾—äº†ï¼Œä½ ä¸æ˜¯çœŸçš„å¥½ï¼"
+    MsgBox "ä½ è¦æ˜¯å†ç‚¹ã€ç¡®å®šã€‘ï¼Œæˆ‘å°±ä¸å’Œä½ çŽ©äº†ï¼"
+    MsgBox "ä½ è¿˜æ•¢ç‚¹ã€ç¡®å®šã€‘ï¼Œå¥½å•Šï¼Œæˆ‘è®¤é”™ä½ äº†ï¼"
+    MsgBox "å¯¹æ–¹å‘ç«äº†", vbCritical
 
 End Function
 
 Public Function MsgLaugh()
 
-    MsgLaugh = "¶Ô·½ÉµÐ¦ÁËÒ»Í¨" + vbCrLf
-    MsgBox "ÎûÎûÎû"
-    MsgBox "ÎûÎûÎûÎû"
-    MsgBox "ºÇºÇºÇºÇ"
-    MsgBox "¹þ¹þ¹þ"
-    MsgBox "ºÙºÙºÙºÙºÙ"
-    MsgBox "Ã»ÊÂÁË£¬¿©¿©¿©"
+    MsgLaugh = "å¯¹æ–¹å‚»ç¬‘äº†ä¸€é€š" + vbCrLf
+    MsgBox "å˜»å˜»å˜»"
+    MsgBox "å˜»å˜»å˜»å˜»"
+    MsgBox "å‘µå‘µå‘µå‘µ"
+    MsgBox "å“ˆå“ˆå“ˆ"
+    MsgBox "å˜¿å˜¿å˜¿å˜¿å˜¿"
+    MsgBox "æ²¡äº‹äº†ï¼Œå’¯å’¯å’¯"
 
 End Function
 
 Public Function MsgGame()
 
-    MsgGame = "¶Ô·½ºÜÉúÆø£¬ºó¹ûºÜÑÏÖØ£¬²»¹ý£¬ÕâÊÇ°³ÃÇÒ»ÊÖ²ß»®µÄ£¬hoho" + vbCrLf
+    MsgGame = "å¯¹æ–¹å¾ˆç”Ÿæ°”ï¼ŒåŽæžœå¾ˆä¸¥é‡ï¼Œä¸è¿‡ï¼Œè¿™æ˜¯ä¿ºä»¬ä¸€æ‰‹ç­–åˆ’çš„ï¼Œhoho" + vbCrLf
 
     Dim Ans As Integer
 LoopGame:
-    Ans = MsgBox("À´£¬ÎÒÀ´ºÍÄãÍæ¸öÓÎÏ·", vbYesNo)
-    If Ans = vbYes Then MsgBox "Ì«ºÃÁË" Else MsgBox "°¡£¿²»ÒªÂï£¡": GoTo LoopGame
+    Ans = MsgBox("æ¥ï¼Œæˆ‘æ¥å’Œä½ çŽ©ä¸ªæ¸¸æˆ", vbYesNo)
+    If Ans = vbYes Then MsgBox "å¤ªå¥½äº†" Else MsgBox "å•Šï¼Ÿä¸è¦å˜›ï¼": GoTo LoopGame
 LoopGameBegin:
-    Ans = MsgBox("ÓÎÏ·µÄÄÚÈÝÊÇÕâÑùµÄ£¬ÎÒÎÊÎÊÌâ£¬Äã»Ø´ð£¬²»Ðí»Ø´ðÊÇ£¡ÎûÎû", vbYesNo)
-    If Ans = vbYes Then MsgBox "²»ÊÇËµ²»ÐíÑ¡¡¾ÊÇ¡¿Âð£¿ÖØÍ·À´£¡": GoTo LoopGameBegin Else MsgBox "²»ÐÐÂð£¿»µµ°£¡"
-    MsgBox "ÒÔºóÔÙÒ²²»ºÍÄãÍæÁË"
+    Ans = MsgBox("æ¸¸æˆçš„å†…å®¹æ˜¯è¿™æ ·çš„ï¼Œæˆ‘é—®é—®é¢˜ï¼Œä½ å›žç­”ï¼Œä¸è®¸å›žç­”æ˜¯ï¼å˜»å˜»", vbYesNo)
+    If Ans = vbYes Then MsgBox "ä¸æ˜¯è¯´ä¸è®¸é€‰ã€æ˜¯ã€‘å—ï¼Ÿé‡å¤´æ¥ï¼": GoTo LoopGameBegin Else MsgBox "ä¸è¡Œå—ï¼Ÿåè›‹ï¼"
+    MsgBox "ä»¥åŽå†ä¹Ÿä¸å’Œä½ çŽ©äº†"
 
 End Function
 
 Public Function MsgTopMost()
 
-    MsgTopMost = "¶Ô·½·¢ËÍÁËÒ»¸ö´°¿ÚÖÃ¶¥ÃüÁî£¬ÄãÊÔÊÔ"
+    MsgTopMost = "å¯¹æ–¹å‘é€äº†ä¸€ä¸ªçª—å£ç½®é¡¶å‘½ä»¤ï¼Œä½ è¯•è¯•"
     mdlTopMost.TopMost FormTalk
 
 End Function

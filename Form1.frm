@@ -10,7 +10,7 @@ Begin VB.Form FormTalk
    LinkTopic       =   "Form1"
    ScaleHeight     =   3360
    ScaleWidth      =   6870
-   StartUpPosition =   3  '´°¿ÚÈ±Ê¡
+   StartUpPosition =   3  'çª—å£ç¼ºçœ
    Begin VB.TextBox Rtb 
       Appearance      =   0  'Flat
       Height          =   2415
@@ -23,10 +23,10 @@ Begin VB.Form FormTalk
       Width           =   6615
    End
    Begin VB.CommandButton CmdSend 
-      Caption         =   "·¢ËÍ"
+      Caption         =   "å‘é€"
       Default         =   -1  'True
       BeginProperty Font 
-         Name            =   "ËÎÌå"
+         Name            =   "å®‹ä½“"
          Size            =   14.25
          Charset         =   134
          Weight          =   400
@@ -57,9 +57,9 @@ Begin VB.Form FormTalk
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "ÕâÊÇ£º"
+      Caption         =   "è¿™æ˜¯ï¼š"
       BeginProperty Font 
-         Name            =   "ËÎÌå"
+         Name            =   "å®‹ä½“"
          Size            =   10.5
          Charset         =   134
          Weight          =   400
@@ -89,24 +89,24 @@ Public UserName As String
 Private Sub CmdSend_Click()
 
     On Error Resume Next
-    'ÔÚ¼üÈëEntreÊ±£¬Á¢¼´½«Æä·¢ËÍ³öÈ¥¡£
+    'åœ¨é”®å…¥Entreæ—¶ï¼Œç«‹å³å°†å…¶å‘é€å‡ºå»ã€‚
 
     Dim Str As String
     Str = TxtSend.Text
 
     If Trim(Str) = "" Then
-        MsgBox "·¢ËÍÄÚÈİ²»ÄÜÎª¿Õ": Exit Sub
+        MsgBox "å‘é€å†…å®¹ä¸èƒ½ä¸ºç©º": Exit Sub
 
     ElseIf IsBadWord(Str) Then
-        MsgBox "²»ĞíÂîÔà»°£¡´ú±íÈËÃñºÍĞ³Äã£¡"
+        MsgBox "ä¸è®¸éª‚è„è¯ï¼ä»£è¡¨äººæ°‘å’Œè°ä½ ï¼"
         Actions.MsgSB: Actions.MsgFool
         Exit Sub
     End If
 
-    Winsock1.SendData MyName & "(" & Winsock1.LocalIP & ")£º:" & TxtSend.Text
+    Winsock1.SendData MyName & "(" & Winsock1.LocalIP & ")ï¼š:" & TxtSend.Text
 
     Dim StrData As String
-    StrData = "ÎÒ£º:" & TxtSend.Text
+    StrData = "æˆ‘ï¼š:" & TxtSend.Text
 
     Dim a() As String
     a = Split(StrData, ":")
@@ -132,19 +132,19 @@ End Sub
 Private Sub Form_Load()
   BadWordVip = False
   On Error Resume Next
-    IPNum = InputBox("ÇëÊäÈë¡¾Ta¡¿µÄ {IP} »ò {¼ÆËã»úÃû} ")
-    MyName = InputBox("ÇëÊäÈë¡¾ÎÒ¡¿µÄ {êÇ³Æ} ")
+    IPNum = InputBox("è¯·è¾“å…¥ã€Taã€‘çš„ {IP} æˆ– {è®¡ç®—æœºå} ")
+    MyName = InputBox("è¯·è¾“å…¥ã€æˆ‘ã€‘çš„ {æ˜µç§°} ")
     MyPortNum = 1033
     UserPortNum = 1033
-    Label1.Caption = "ÕâÊÇ" & MyName & "Óë" & IPNum & "µÄÁÄÌì"
+    Label1.Caption = "è¿™æ˜¯" & MyName & "ä¸" & IPNum & "çš„èŠå¤©"
 
         With Winsock1
             .RemoteHost = IPNum
             .RemotePort = UserPortNum
-            .Bind MyPortNum '°ó¶¨µ½±¾µØµÄ¶Ë¿Ú¡£
+            .Bind MyPortNum 'ç»‘å®šåˆ°æœ¬åœ°çš„ç«¯å£ã€‚
         End With
     
-    Winsock1.SendData "!!!:$" & MyName + "ÒÑ¾­ÉÏÏß"
+    Winsock1.SendData "!!!:$" & MyName + "å·²ç»ä¸Šçº¿"
 
     Exit Sub
 
@@ -165,10 +165,10 @@ End Sub
 Private Sub Form_Unload(Cancel As Integer)
 
 On Error GoTo Errors2
-    Winsock1.SendData "!!!:$" & MyName + "ÒÑ¾­ÏÂÏß"
+    Winsock1.SendData "!!!:$" & MyName + "å·²ç»ä¸‹çº¿"
 
 Errors2:
-    If Err.Number = 10014 Then MsgBox "¶Ô·½²»ÔÚÏß" Else Exit Sub
+    If Err.Number = 10014 Then MsgBox "å¯¹æ–¹ä¸åœ¨çº¿" Else Exit Sub
 End Sub
 
 Private Sub Label1_DblClick()
@@ -200,10 +200,10 @@ End Sub
 
 Public Function DoAction(ByVal Str As String) As String
     If (Mid(Str, 1, 1) <> "#") And (Mid(Str, 1, 1) <> "$") Then
-        DoAction = IIf(Trim(Str) = "", "", "------¡¤" + Str + vbCrLf)
+        DoAction = IIf(Trim(Str) = "", "", "------Â·" + Str + vbCrLf)
 
     ElseIf Mid(Str, 1, 1) = "$" Then
-        DoAction = "------¡¤¼¦Ã«ĞÅ£º" + Right(Str, Len(Str) - 1) + vbCrLf
+        DoAction = "------Â·é¸¡æ¯›ä¿¡ï¼š" + Right(Str, Len(Str) - 1) + vbCrLf
         MsgBox Right(Str, Len(Str) - 1)
 
     ElseIf Mid(Str, 1, 1) = "#" Then
@@ -252,47 +252,47 @@ End Function
 Public Function CrlfFun(ByVal Str As String) As String
     On Error GoTo ErrFun3
     If (Mid(Str, 1, 1) <> "#") And (Mid(Str, 1, 1) <> "$") Then
-        CrlfFun = IIf(Trim(Str) = "", "", "------¡¤" + Str + vbCrLf)
+        CrlfFun = IIf(Trim(Str) = "", "", "------Â·" + Str + vbCrLf)
     ElseIf Mid(Str, 1, 1) = "$" Then
-        CrlfFun = "------¡¤¼¦Ã«ĞÅ£º" + Right(Str, Len(Str) - 1) + vbCrLf
+        CrlfFun = "------Â·é¸¡æ¯›ä¿¡ï¼š" + Right(Str, Len(Str) - 1) + vbCrLf
     ElseIf Mid(Str, 1, 1) = "#" Then
         Select Case LCase(Str)
 
             Case "#shutdown"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸ö¹Ø»úÃüÁî" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªå…³æœºå‘½ä»¤" + vbCrLf
 
             Case "#unshutdown"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸öÈ¡Ïû¹Ø»úÃüÁî" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªå–æ¶ˆå…³æœºå‘½ä»¤" + vbCrLf
 
             Case "#sb"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸öÂîÈËÃüÁî" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªéª‚äººå‘½ä»¤" + vbCrLf
 
             Case "#shake"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸ö´°¿Ú¶¶¶¯ÃüÁî£¨¸ĞĞ»ÌÚÑ¶QQµÄÁé¸Ğ£©" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªçª—å£æŠ–åŠ¨å‘½ä»¤ï¼ˆæ„Ÿè°¢è…¾è®¯QQçš„çµæ„Ÿï¼‰" + vbCrLf
             
             Case "#tillshake"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸öÁ¬Ğø´°¿Ú¶¶¶¯ÃüÁî£¨¸ĞĞ»ÌÚÑ¶QQµÄÁé¸Ğ£©" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªè¿ç»­çª—å£æŠ–åŠ¨å‘½ä»¤ï¼ˆæ„Ÿè°¢è…¾è®¯QQçš„çµæ„Ÿï¼‰" + vbCrLf
             
             Case "#stopshake"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸öÍ£Ö¹´°¿Ú¶¶¶¯ÃüÁî" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªåœæ­¢çª—å£æŠ–åŠ¨å‘½ä»¤" + vbCrLf
             
             Case "#fool"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸öºÜ¶şÌáÎÊ" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªå¾ˆäºŒæé—®" + vbCrLf
             
             Case "#music"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸öÏìÉùÃüÁî" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªå“å£°å‘½ä»¤" + vbCrLf
             
             Case "#hello"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸öÎÊºÃÃüÁî" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªé—®å¥½å‘½ä»¤" + vbCrLf
             
             Case "#laugh"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸öÉµĞ¦ÃüÁî" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªå‚»ç¬‘å‘½ä»¤" + vbCrLf
             
             Case "#game"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸öÓÎÏ·ÃüÁî" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªæ¸¸æˆå‘½ä»¤" + vbCrLf
                         
             Case "#topmost"
-                CrlfFun = "------¡¤Äã·¢ËÍÁËÒ»¸ö´°¿ÚÖÃ¶¥ÃüÁî" + vbCrLf
+                CrlfFun = "------Â·ä½ å‘é€äº†ä¸€ä¸ªçª—å£ç½®é¡¶å‘½ä»¤" + vbCrLf
 
         End Select
 
